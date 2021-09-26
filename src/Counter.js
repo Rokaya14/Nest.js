@@ -17,7 +17,7 @@ const Counter = ({ name }) => {
   return (
     <div className="card">
       <h2> {name} </h2>
-      <h3> {`Votess: ${votes}`} </h3>
+      <h3> {`Votes: ${votes}`} </h3>
       <div className="Buttons">
         <button onClick={handleIncrement}> Increment </button>
         <button onClick={handleDecrement}> Decrement </button>
