@@ -1,18 +1,22 @@
 import React, { useState } from "react";
-
+import { useDispatch, useSelector } from "react-redux";
+import { increment, decrement } from "./Redux/ducks/counter";
 const Counter = ({ name }) => {
-  const [count, setCount] = useState(0);
+  const [votes, setvotess] = useState(0);
 
+  const dispatch = useDispatch();
   const handleIncrement = () => {
-    setCount(count + 1);
+    dispatch(increment());
+    setvotess(votes + 1);
   };
   const handleDecrement = () => {
-    setCount(count - 1);
+    dispatch(decrement());
+    setvotess(votes - 1);
   };
   return (
     <div style={{ backgroundColor: "grey", margin: "10px" }}>
       <h2> {name} </h2>
-      <h3> {`Counter: ${count}`} </h3>
+      <h3> {`Votess: ${votes}`} </h3>
       <div
         style={{
           display: "flex",
