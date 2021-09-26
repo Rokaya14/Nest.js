@@ -13,7 +13,6 @@ function App() {
   ];
   return (
     <div className="App">
-      <p>Learn React</p>
       <div className="App">
         <h1>Redux made easy</h1>
         <h2> Total Votes: {count}</h2>

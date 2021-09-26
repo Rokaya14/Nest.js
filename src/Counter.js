@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { increment, decrement } from "./Redux/ducks/counter";
+import "./style.css";
 const Counter = ({ name }) => {
   const [votes, setvotess] = useState(0);
 
@@ -14,16 +15,10 @@ const Counter = ({ name }) => {
     setvotess(votes - 1);
   };
   return (
-    <div style={{ backgroundColor: "grey", margin: "10px" }}>
+    <div className="card">
       <h2> {name} </h2>
       <h3> {`Votess: ${votes}`} </h3>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          paddingBottom: "30px",
-        }}
-      >
+      <div className="Buttons">
         <button onClick={handleIncrement}> Increment </button>
         <button onClick={handleDecrement}> Decrement </button>
       </div>
