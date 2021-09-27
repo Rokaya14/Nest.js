@@ -1,6 +1,6 @@
 //actions type
-const INCREMENT = "INCREMENT";
-const DECREMENT = "DECREMENT";
+export const INCREMENT = "INCREMENT";
+export const DECREMENT = "DECREMENT";
 
 // actions creator function that return an object that contain the action
 export const increment = () => ({
