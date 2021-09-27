@@ -6,6 +6,7 @@ export function* handelGetUser() {
   try {
     const response = yield call(api);
     const { data } = response;
+    // dispatch setUser action to put data in our store
     yield put(setUser(data));
   } catch (error) {
     console.log(error);
