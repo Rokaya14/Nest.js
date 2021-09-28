@@ -15,7 +15,7 @@ const initialState = {
 };
 
 // reducer
-const userReducer = (state = initialState, action) => {
+const counterReducer = (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:
       return { ...state, count: state.count + 1 };
@@ -26,4 +26,4 @@ const userReducer = (state = initialState, action) => {
       return state;
   }
 };
-export default userReducer;
+export default counterReducer;

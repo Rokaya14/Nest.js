@@ -38,3 +38,10 @@ button:first-child {
 button:last-child {
   background-color: #f44336;
 }
+.userName {
+  color: #e99a33;
+}
+.count {
+  color: #12c218;
+  font-size: 30px;
+}

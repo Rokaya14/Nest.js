@@ -1,8 +1,8 @@
 import { combineReducers, createStore, applyMiddleware } from "redux";
-import userReducer from "./ducks/counter";
+import userReducer from "./ducks/user";
 import counterReducer from "./ducks/counter";
 import createSagaMiddleware from "redux-saga";
-import { watcherSaga } from "./sagas/rootSaga";
+import watcherSaga from "./sagas/rootSaga";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 const reducer = combineReducers({
@@ -11,11 +11,11 @@ const reducer = combineReducers({
 });
 
 const sagaMiddleware = createSagaMiddleware();
+const middleware = [sagaMiddleware];
 
 const store = createStore(
   reducer,
-  {},
-  composeWithDevTools(applyMiddleware(sagaMiddleware))
+  composeWithDevTools(applyMiddleware(...middleware))
 );
 sagaMiddleware.run(watcherSaga);
 

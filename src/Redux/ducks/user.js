@@ -9,7 +9,7 @@ export const getUser = () => ({
 });
 export const setUser = (user) => ({
   type: SET_USER,
-  payload: user,
+  user,
 });
 
 const initialState = {
@@ -17,13 +17,14 @@ const initialState = {
 };
 
 // reducer
-const counterReducer = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_USER:
-      return { ...state, user: action.payload };
+      const { user } = action;
+      return { ...state, user };
 
     default:
       return state;
   }
 };
-export default counterReducer;
+export default userReducer;
