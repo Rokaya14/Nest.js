@@ -11,11 +11,10 @@ const reducer = combineReducers({
 });
 
 const sagaMiddleware = createSagaMiddleware();
-const middleware = [sagaMiddleware];
 
 const store = createStore(
   reducer,
-  composeWithDevTools(applyMiddleware(...middleware))
+  composeWithDevTools(applyMiddleware(sagaMiddleware))
 );
 sagaMiddleware.run(watcherSaga);
 
